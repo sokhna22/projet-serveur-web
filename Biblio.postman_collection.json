@@ -1,0 +1,660 @@
+{
+	"info": {
+		"_postman_id": "bb73e597-8d32-409b-b1bc-545d3e55e3ad",
+		"name": "Biblio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23230480"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_name\": \"Auth_test\",\r\n    \"password\" : \"Cite22\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{chap7}}/Users/login",
+							"host": [
+								"{{chap7}}"
+							],
+							"path": [
+								"Users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "utilisateur",
+			"item": [
+				{
+					"name": "ajouter user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom\": \"dop\",\r\n    \"prenom\" : \"Khaim\",\r\n    \"naissance\": \"1988-09-16\",\r\n    \"telephone\" : \"514-870-1677\",\r\n    \"email\" : \"alchi@gmail.com\",\r\n    \"user_name\": \"Auth_test\",\r\n    \"password\" : \"Cite220\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{chap7}}/Users",
+							"host": [
+								"{{chap7}}"
+							],
+							"path": [
+								"Users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liste user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{chap7}}/Users",
+							"host": [
+								"{{chap7}}"
+							],
+							"path": [
+								"Users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "departement",
+			"item": [
+				{
+					"name": "Ajouter un departement",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{chap7}}/departments",
+							"host": [
+								"{{chap7}}"
+							],
+							"path": [
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liste departement",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Supprimer un departement",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{chap7}}/departments/:1",
+							"host": [
+								"{{chap7}}"
+							],
+							"path": [
+								"departments",
+								":1"
+							],
+							"variable": [
+								{
+									"key": "1",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mettre a jour un departement",
+					"request": {
+						"method": "PUT",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Livre",
+			"item": [
+				{
+					"name": "Ajouter un livre",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Supprimer livre",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{chap7}}/livre/1",
+							"host": [
+								"{{chap7}}"
+							],
+							"path": [
+								"livre",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mettre a jour un livre",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status_reservation\" : \"emprunter\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{chap7}}/livre/1",
+							"host": [
+								"{{chap7}}"
+							],
+							"path": [
+								"livre",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Liste des livre",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{chap7}}/livre",
+							"host": [
+								"{{chap7}}"
+							],
+							"path": [
+								"livre"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reservation",
+			"item": [
+				{
+					"name": "Ajout reservation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{chap7}}/reservation",
+							"host": [
+								"{{chap7}}"
+							],
+							"path": [
+								"reservation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liste des reservation",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Mettre a jour une reservation",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{chap7}}/departments/1",
+							"host": [
+								"{{chap7}}"
+							],
+							"path": [
+								"departments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Supprimer reservation",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Emprunt",
+			"item": [
+				{
+					"name": "Ajouter un emprunt",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Liste des emprunt",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Mettre a jour un emprunt",
+					"request": {
+						"method": "PUT",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Supprimer un emprunt",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{chap7}}/emprunt/1",
+							"host": [
+								"{{chap7}}"
+							],
+							"path": [
+								"emprunt",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Editeur",
+			"item": [
+				{
+					"name": "Ajouter un editeur",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{chap7}}/editeur",
+							"host": [
+								"{{chap7}}"
+							],
+							"path": [
+								"editeur"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Liste des editeurs",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Mettre a jour un editeur",
+					"request": {
+						"method": "PUT",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Supprimer un editeur",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{chap7}}/editeur/1",
+							"host": [
+								"{{chap7}}"
+							],
+							"path": [
+								"editeur",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rayon",
+			"item": [
+				{
+					"name": "Ajouter un rayon",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{chap7}}/rayon",
+							"host": [
+								"{{chap7}}"
+							],
+							"path": [
+								"rayon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liste rayon",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "mettre a jour un rayon",
+					"request": {
+						"method": "PUT",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Supprimer un rayon",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{chap7}}/Users/login",
+							"host": [
+								"{{chap7}}"
+							],
+							"path": [
+								"Users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auteur",
+			"item": [
+				{
+					"name": "Ajouter un auteur",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "liste auteur",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "mettre a jour un auteur",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{chap7}}/auteur/1",
+							"host": [
+								"{{chap7}}"
+							],
+							"path": [
+								"auteur",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Supprimer un auteur",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{chap7}}/auteur/1",
+							"host": [
+								"{{chap7}}"
+							],
+							"path": [
+								"auteur",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Amende",
+			"item": [
+				{
+					"name": "Ajouter une amende",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Liste amende",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{chap7}}/amende",
+							"host": [
+								"{{chap7}}"
+							],
+							"path": [
+								"amende"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mettre a jour une amende",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date_amende\": \"2023/09/20\",\r\n    \"montant\": \"89$\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{chap7}}/amende/1",
+							"host": [
+								"{{chap7}}"
+							],
+							"path": [
+								"amende",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Supprimer une amende",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{chap7}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "chap7",
+			"value": "http://localhost:5011",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNjc5MDc1MDg3fQ.Z7ptncgRCBpEav22_88OCj6svVdXH5BEuWIriLn3Bug\"",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "token1",
+			"value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNjc5MDk3NjQzfQ.kHk2qgXGfKxSuQhG68djTH-DoInIKF0uUiM0ldPW5rc\"",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}
